@@ -1,0 +1,130 @@
+<nav class="navbar sticky-top navbar-expand-lg">
+	<div class="container">
+		<a class="navbar-brand" routerLink="/">SpartaLeagues</a>
+		<button class="drawer-toggler" type="button" (click)="openNavDrawer()">
+			<i class="fa fa-bars" aria-hidden="true"></i>
+		</button>
+	
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" routerLink='/' routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Home</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" routerLink='/participate' routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Participate</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" routerLink='/faq' routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Faq</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" routerLink='/contact' routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Contact</a>
+				</li>
+
+				<li class="nav-item" *ngIf="!authService.loggedIn()">
+					<a class="nav-link" routerLink='/login' routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Sign in</a>
+				</li>
+
+				<li class="nav-item" *ngIf="authService.loggedIn()">
+					<span dropdown *ngIf="user">
+						<a class="nav-link" href="" dropdownToggle (click)="false" class="user-icon-link">
+							<i class="fas fa-user-circle user-icon" *ngIf="!user.imgLink"></i>
+							<img src="{{user.imgLink}}" class="user-img" *ngIf="user.imgLink">
+						</a>
+
+						<ul *dropdownMenu class="dropdown-menu shadow1 user-menu-dropdown">
+							<li role="menuitem">
+								<span class="dropdown-item singed-as">
+									<span style="color: #ebebeb;">Signed in as</span><br>
+									<b style="color: #ebebeb;">{{ user.name }}</b>
+								</span>
+							</li>
+							<li class="divider dropdown-divider"></li>
+							<li role="menuitem"><a class="dropdown-item" routerLink='/profile'><i class="fas fa-cog"></i> Profile</a></li>
+							<li role="menuitem"><a class="dropdown-item" href="#" (click)="onLogoutClick()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+						</ul>
+					</span>
+				</li>
+
+				<ul class="navbar-nav my-2 my-lg-0 social-icon-container">
+					<li class="nav-item">
+						<a class="nav-link" href="{{facebook}}" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{twitter}}" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{youtube}}" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{insta}}" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+					</li>
+				</ul>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+<!-- ============================== Navbar Drawer ================================= -->
+<div id="overlay" (click)="closeNavDrawer()"></div>
+<div class="nav-drawer" id="navbar-drawer">
+	<header>
+		<div class="header-container">
+			<a class="navbar-brand" routerLink="/" *ngIf="!authService.loggedIn()">SpartaLeagues</a>
+			<ul *ngIf="authService.loggedIn()">
+				<li class="nav-item" *ngIf="user">
+					<i class="fas fa-user-circle" *ngIf="!user.imgLink"></i>
+					<img src="{{user.imgLink}}" class="user-img" *ngIf="user.imgLink">
+				</li>
+				<li class="nav-item" *ngIf="user">
+					<span style="color: #999;">Signed in as</span>
+					<h6>{{user.name}}</h6>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<ul class="navbar-nav text-center">
+		<li class="nav-item" (click)="closeNavDrawer()">
+			<a class="nav-link" routerLink='/' routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Home</a>
+		</li>
+		<li class="nav-item" (click)="closeNavDrawer()">
+			<a class="nav-link" routerLink='/participate' routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Participate</a>
+		</li>
+		<li class="nav-item" (click)="closeNavDrawer()">
+			<a class="nav-link" routerLink='/faq' routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Faq</a>
+		</li>
+		<li class="nav-item" (click)="closeNavDrawer()">
+			<a class="nav-link" routerLink='/contact' routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Contact</a>
+		</li>
+		<li class="nav-item" *ngIf="!authService.loggedIn()" (click)="closeNavDrawer()">
+			<a class="nav-link" routerLink='/login' routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Sign in</a>
+		</li>
+		<li class="nav-item" *ngIf="authService.loggedIn()" (click)="closeNavDrawer()">
+			<a class="nav-link" routerLink='/profile' routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Profile</a>
+		</li>
+		<li class="nav-item" *ngIf="authService.loggedIn()" (click)="closeNavDrawer()">
+			<a class="nav-link" href="#" (click)="onLogoutClick()">Logout</a>
+		</li>
+	</ul>
+	<footer>
+		<div class="container">
+			<ul>
+				<li class="nav-item">
+					<a class="nav-link" href="{{facebook}}" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{twitter}}" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{youtube}}" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{insta}}" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+				</li>
+			</ul>
+		</div>	
+	</footer>
+</div>

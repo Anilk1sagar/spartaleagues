@@ -1,0 +1,82 @@
+// Imports
+    @import 'app/theme/theme';
+
+body {
+    background-color: $as-color-body;
+    font-family: $font-family-primary !important;
+    font-weight: $font-normal;
+    color: #fff;
+}
+
+// ======================== Flash Messages ===========================//
+.flashMeassage-danger {
+    display: block;
+    padding-bottom: 0px;
+    background-color: #c74444;
+    color: #fff;
+    border-radius: 2px;
+    border-left: 5px solid #a90d0e;
+    width: auto;
+    animation: alertAnimation .7s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    position: fixed;
+    right: 40px;
+    top: 70px;
+    z-index: 1000000 !important;
+}
+
+.flashMeassage-success {
+    padding-bottom: 0px;
+    background-color: #3eb56e;
+    color: #fff;
+    border-radius: 2px;
+    border-left: 5px solid #319f5d;
+    width: auto;
+    animation: alertAnimation .7s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    position: fixed;
+    right: 40px;
+    top: 70px;
+    text-indent: 20px;
+    z-index: 10000000!important;
+
+    &::before {
+        content: '\2713';
+        padding-right: 10px;
+        position: absolute;
+        left: 0;
+    }
+}
+
+
+// ======================== Loader =========================//
+
+.loader-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    i {
+        color: $as-color-primary;
+        font-size: 30px;
+    }
+}
+
+
+//=========================== Animations ============================//
+
+
+@keyframes alertAnimation {
+    0%   {right: -100px}
+    80%  {right: 50px}
+    90%  {right: 30px}
+    100% {right: 40px}
+}
+
+
+
+// For Mobile
+@media (max-width: 575.98px) {
+    
+}

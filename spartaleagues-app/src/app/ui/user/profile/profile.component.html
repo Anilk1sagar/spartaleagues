@@ -1,0 +1,57 @@
+<!-- Main Header Section -->
+<div class="main-header" *ngIf="user">
+	<img src="{{user.coverImgLink}}" *ngIf= "user.coverImgLink">
+	<img src="./assets/images/cover-default.jpg" *ngIf= "!user.coverImgLink">
+
+	<!-- <div class="header-overlay"> -->
+		<div class="container">
+			<div class="avatar-container shadow1">
+				<img src="{{user.imgLink}}" *ngIf= "user.imgLink">
+				<img src="./assets/images/user.jpg" *ngIf= "!user.imgLink">
+				<h5 class="text-center">{{user.name}}</h5>
+			</div>
+			<div class="profile-nav-container">
+				<div class="as-card-user-navbar">
+					<ul class="user-profile-nav">
+						<li class="nav-item">
+							<a class="nav-link" routerLink='/profile' routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}"><i class="fas fa-chart-line"></i> Status</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" routerLink='/profile/settings' routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}"> <i class="fas fa-pencil-alt"></i> Edit Profile</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	<!-- </div> -->
+</div>
+
+<div class="container content-container">
+	<div class="row">
+		<div class="col-md-4 profile-detailes">
+			<div class="as-card shadow1">
+				<h6 class="page-header">ABOUT</h6><hr>
+				<ul class="list-group" *ngIf="user">
+					<li class="list-group-item as-mg-bottom-5">
+						<i class="fas fa-envelope"></i> {{ user.email }}
+					</li>
+					<li class="list-group-item as-mg-bottom-5" *ngIf="user.city">
+						<i class="fas fa-map-marker location-icon"></i> {{ user.city }}
+					</li>
+					<li class="list-group-item as-mg-bottom-5" *ngIf="gameRank">
+						<i class="fab fa-gitkraken rank-icon"></i> {{ gameRank }}
+					</li>
+					<li class="list-group-item as-mg-bottom-5" *ngIf="user.steamProfile">
+						<i class="fab fa-steam"></i> <a href="{{user.steamProfile}}" target="_blank">Steam Profile</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div class="as-card shadow1">
+				<router-outlet></router-outlet>
+			</div>
+		</div>
+	</div>
+</div>
+

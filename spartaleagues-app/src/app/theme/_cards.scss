@@ -1,0 +1,23 @@
+.as-card {
+    padding: 15px;
+    width: 100%;
+    background-color: $as-color-card;
+    color: #ebebeb;
+    border-radius: 0px;
+}
+
+.as-inside-card {
+    padding: 15px;
+    width: 100%;
+    background-color: $as-color-body;
+    color: #ebebeb;
+    border-radius: 0px;
+}
+
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+    .as-card {
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,47 @@
+.container {
+    padding-top: 20px;
+
+    .form-container {
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    .search_input {
+        margin-right: 10px;
+        width: 60%;
+    }
+
+    #search_btn {
+        padding-top: 5px;
+        padding-bottom: 6px;
+        font-size: 15px;
+    }
+
+    .players-result {
+        padding-top: 100px;
+        padding-bottom: 200px;
+        color: #888;
+    }
+
+}
+
+// .table-bordered td, th {
+//     border: 2px solid #22282f;
+// }
+
+
+// For Mobile
+@media (max-width: 575.98px) {
+    .container {
+        
+        .search_input {
+            width: 100% !important;
+            margin-bottom: 10px;
+        }
+
+        #search_btn {
+            padding: 5px;
+            font-size: 13px;
+        }
+    }
+}

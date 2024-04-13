@@ -1,0 +1,21 @@
+.tab-container {
+    margin-top: 8px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.table-bordered td {
+    border: 2px solid #22282f;
+}
+
+// For Mobile
+@media (max-width: 575.98px) {
+    .container {
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+}

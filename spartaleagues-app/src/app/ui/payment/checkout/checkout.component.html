@@ -1,0 +1,104 @@
+<div class="container" *ngIf="user"><br>
+	<h4 class="page-header text-center">Complete Your Purchase</h4><br>
+	<div class="as-card shadow1">
+
+		<div class="row">
+			<div class="col-lg-6 user-detailes">
+				<h4 class="page-header">Your Detailes</h4>
+				
+				<div class="as-card">
+					<div style="overflow-x:auto;">
+						<table class="table table-hover table-bordered">
+							<tbody>
+								<tr>
+									<td>
+										<b>Mode</b>
+									</td>
+									<td>
+										{{ user.mode }}
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<b>Team Name</b>
+									</td>
+									<td>
+										{{ user.teamName }}
+									</td>
+								</tr>
+								<tr>
+									<td><b>Contact</b></td>
+									<td>{{ user.contact }}</td>
+								</tr>
+								<tr>
+									<td><b>Players Emails</b></td>
+									<td>
+										<ul class="emails-list">
+											<li *ngFor="let email of user.emails">{{email}}</li>
+										</ul>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div><br>
+
+				<h6>Need to change detailes? <a class="edit-link" routerLink='/participate' routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Edit Detailes</a></h6><br>
+			</div>
+
+			<div class="col-lg-6">
+				<ul class="payment-options">
+					<li>
+						<i class="fas fa-credit-card"></i><br>Card
+					</li>
+					<li>
+						<i class="fas fa-university"></i><br>Netbanking
+					</li>
+					<li>
+						<i class="fab fa-google-wallet"></i><br>Wallet
+					</li>
+					<li>
+						<i class="fab fa-cc-amazon-pay"></i><br>UPI
+					</li>
+				</ul><br>
+				<div class="as-card shadow1 order-summery-card">
+					<h6 class="text-center">Order Summary</h6><hr>
+					<ul>
+						<li>
+							Subtotal <span>₹{{amount}}.00</span>
+						</li>
+						<li>
+							Tax <span>₹0.00</span>
+						</li>
+						<li>
+							Discount <span>₹0.00</span>
+						</li><hr>
+						<li>
+							Total <span>₹{{amount}}.00</span>
+						</li>
+					</ul><br>
+					<!-- Test URL
+					https://test.payu.in/_payment -->
+					<!-- Production URL
+					https://secure.payu.in/_payment -->
+					<form id="paymentForm" action='https://test.payu.in/_payment' method='post'>
+						<input type="hidden" name="key" value="{{mkey}}" />
+						<input type="hidden" name="txnid" value="{{txnid}}" />
+						<input type="hidden" name="amount" value="{{amount}}" />
+						<input type="hidden" name="productinfo" value="{{productInfo}}" />
+						<input type="hidden" name="firstname" value="{{firstName}}" />
+						<input type="hidden" name="udf1" value={{id}} />
+						<input type="hidden" name="email" value="{{email}}" />
+						<input type="hidden" name="phone" value="{{phone}}" />
+						<input type="hidden" name="lastname" value="{{lastName}}" />
+						<input type="hidden" name="surl" value="{{surl}}" />
+						<input type="hidden" name="furl" value="{{furl}}" />
+						<input type="hidden" name="hash" id="hash" value="{{hash}}">
+						<!-- <input type="hidden" name="service_provider" value="payu_paisa"> -->
+						<button class="btn btn-primary pay-btn" (click)="presubmit()" type="button">Pay Now</button>
+					</form> 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,146 @@
+<!-- Main Header Section -->
+<div class="main-header">
+	<div class="header-overlay">
+		<div class="container" *ngIf="competetion">
+			<div class="header-text">
+                <!-- 1st Row Start -->
+				<div class="row header-top-box">
+					<div class="col-md-6 col-sm-12">
+                        <div class="game-box">
+                            <img src="./assets/images/sm-csgo.jpeg" alt="csgo">
+                            <h4>{{competetion.name}}</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="description-box">
+                            <p>{{competetion.description}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2nd Row Start -->
+                <div class="row  header-bottom-box">
+                    <div class="col-md-6 col-sm-3">
+                        <h6 class="page-header">STARTED ON</h6>
+                        <p>{{competetion.date}}</p>
+                    </div>
+                    <div class="col-md-6 col-sm-9 about-section">
+                        <h6 class="page-header">ABOUT</h6>
+                        <div class="row">
+                            <div class="col">
+                                <p>
+                                    <i class="fas fa-users" style="padding-right: 10px;"></i> {{totalTeams}} OUT OF 20<br>
+                                    <span class="as-font-10 as-mg-left-30">PARTICIPANTS</span>
+                                </p>
+                            </div>
+                            <div class="col">
+                                <p>
+                                    <i class="fas fa-map-marker-alt" style="padding-right: 10px;"></i> {{competetion.location}}<br>
+                                    <span class="as-font-10 as-mg-left-30">LOCATION</span>
+                                </p>
+                            </div>
+                            <div class="col">
+                                <p>
+                                    <i class="fas fa-sitemap" style="padding-right: 10px;"></i> KNOCKOUT<br>
+                                    <span class="as-font-10 as-mg-left-30">TOURNAMENT TYPE</span>
+                                </p>
+                            </div>
+                        </div>
+					</div>
+                </div>
+                <!-- Row End -->
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- Participate Section -->
+<div class="container"><br>
+    <div class="text-center">
+        <h4 class="underline-hr">Participate</h4>
+    </div><br>
+    <div class="as-card shadow1">
+        <ul class="tabs-nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink='/participate/csgo' routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}"><i class="fab fa-hubspot"></i> Have Team</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink='/participate/create-team' routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}"><i class="fas fa-plus-circle"></i> Create Team</a>
+            </li>
+        </ul><br>
+
+        <!-- CSGO Game Particpate Form -->
+        <div class="container form-container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="as-card compi-detailes-container " *ngIf="competetion">
+                        <h3>Competetion Detailes</h3>
+                        <p>
+                            <span>Name: </span>{{competetion.name}} <br>
+                            <span>Date: </span>{{competetion.date}} <br>
+                            <span>Game: </span>{{competetion.gameName}} <br>
+                            <span>Location: </span>{{ competetion.location }} <br>
+                            <span>Entry Fee: </span>₹{{ competetion.entryFees.multiPlayerMode }}/Team <br>
+                            <!-- Coming Soon! -->
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <form (submit)="onParticipateSubmit()" class="as-card">
+
+                        <div class="form-group">
+                            <label for="teamname">Team Name</label>
+                            <input type="text" class="form-control" [(ngModel)]="teamName" name="teamName" placeholder="Enter Team Name">
+                            <button type="button" style="margin-top:8px;" class="btn btn-dark btn-sm float-right" (click)="checkTeamName()">Check Availability</button>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Team Leader Contact No.</label>
+                            <input type="text" class="form-control" [(ngModel)]="phone" name="phone" placeholder="Enter Contact Number">
+                        </div>
+
+                        <div class="form-group" (change)="getPlayerMode()">
+                            <!-- <div class="custom-control-inline">
+                                <label class="radio-container">Single Player
+                                    <input type="radio" checked="checked" [(ngModel)]="PlayerMode" name="PlayerMode" value="singlePlayerMode">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div> -->
+                            <div class="custom-control-inline">
+                                <label class="radio-container">Multiplayer
+                                    <input type="radio" checked="checked" [(ngModel)]="PlayerMode" name="PlayerMode" value="multiPlayerMode">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Team Players Emails <small class="as-font-12">(Max. 5 Players)</small></label>
+                            <div class="form-row">
+                                <div class="col-lg-6 col-sm-10">
+                                    <input type="email" class="form-control" [(ngModel)]="email" name="email" placeholder="Enter Player Email">
+                                </div>
+                                <div class="col-lg-6 col-sm-2">
+                                    <button type="button" (click)="addEmails()" class="btn btn-primary add-btn">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Listing Player Emails -->
+                        <ul class="list-group" *ngIf="_emails">
+                            <li class="list-group-item" *ngFor="let email of _emails">{{email}} 
+                                <button type="button" class="btn delete-btn" (click)="deleteEmail(email)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </li>
+                        </ul>
+
+                        <button type="submit" class="btn btn-primary" id="participate_btn">Participate <i class="fas fa-arrow-right" style="font-size: 13px;"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

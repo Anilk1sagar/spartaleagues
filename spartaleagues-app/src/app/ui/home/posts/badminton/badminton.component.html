@@ -1,0 +1,17 @@
+<div class="as-card shadow1" *ngFor="let post of posts">
+	<div class="row">
+		<div class="col-md-4">
+			<img *ngIf="post.imgLink" src="{{post.imgLink}}" alt="Thumbnail" class="post-img">
+			<iframe *ngIf="post.videoLink" [src]="sanitizer.bypassSecurityTrustResourceUrl(post.videoLink)" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+		</div>
+		<div class="col-md-8">
+			<a [routerLink]="['/post', post.heading]"><h4>{{post.heading}}</h4></a>
+			<p [innerHTML]="post.description" class="post-description"></p>
+			<small>{{post.gameName}} • <span class="post-date">{{post.updated_date}}</span></small>
+		</div>
+	</div>
+</div><br>
+<div class="pagination-container">
+	<pagination [totalItems]="TotalItems" [(ngModel)]="CurrentPage" [maxSize]="maxSize" [itemsPerPage] ="itemsPerPage" class="pagination-sm"
+	[boundaryLinks]="false" (pageChanged)="pageChanged($event)" class="post-pagination"></pagination>
+</div>

@@ -1,0 +1,145 @@
+.footer {
+    background-color: rgb(14, 14, 14);
+    padding-top: 20px;
+    padding-bottom: 0px;
+    box-shadow: 0px 0px 10px #252525;
+    font-size: 14px;
+    color: #ebebeb;
+
+    a.footer-logo {
+        text-decoration: none;
+        font-size: 30px;
+        color: #c5c2c2;
+        transition: all 0.2s;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    .footerLinks {
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+
+            li {
+                list-style-type: none;
+            }
+    
+            li a {
+                color: #c5c2c2;
+                text-decoration: none;
+                transition: all 0.3s;
+    
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+
+        p {
+            color: #c5c2c2;
+        }
+    }
+}
+
+.footer-copyright {
+    //background-color:#111;
+    border-top: 2px solid #111;
+    margin-top: 30px;
+    color: #c9c9c9;
+    font-size: 13px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    
+    a {
+        color: #c5c2c2;
+        text-decoration: underline;
+        margin-left: 10px;
+    }
+
+    .icon-container {
+        padding: 0px;
+        margin: 0px;
+        list-style: none;
+        margin-top: -10px;
+        float: right;
+
+        li {
+            display: inline-block !important;
+        }
+        
+        a {
+            color: #fff;
+        }
+    }
+}
+
+
+
+// For Mobile
+@media (max-width: 575.98px) {
+    
+}
+
+// For Tablet
+@media (max-width: 768px) {
+    a.footer-logo {
+        font-size: 20px;
+    }
+
+    .footerLinks {
+        margin-top: 30px;
+    }
+
+    .footer-copyright {
+        .icon-container {
+            margin-top: 10px;
+            text-align: center;
+            float: none;
+        }
+    }
+}
+
+
+
+// .footer {
+//     background-color: rgb(14, 14, 14);
+//     padding-top: 20px;
+//     padding-bottom: 0px;
+//     box-shadow: 0px 0px 10px #252525;
+//     font-size: 14px;
+//     color: #ebebeb;
+
+//     a.footer-logo {
+//         float: left;
+//         text-decoration: none;
+//         font-size: 25px;
+//         color: #c5c2c2;
+//         transition: all 0.2s;
+
+//         &:hover {
+//             color: #fff;
+//         }
+//     }
+
+// }
+
+// .footer-copyright {
+//     color: #a5a4a4;
+//     font-size: 13px;
+//     margin-top: 10px;
+
+//     a {
+//         color: #a5a4a4;
+//         text-decoration: underline;
+//         margin-left: 10px;
+//     }
+// }
+
+
+// // For Mobile
+// @media (max-width: 575.98px) {
+    
+// }

@@ -1,0 +1,17 @@
+<div class="container as-pd-top-30">
+	<h4 class="as-text-color-light-grey text-center">Admin Dashboard</h4><br>
+
+	<div class="row">
+		<div class="col-md-3">
+			<ul class="list-group">
+				<li class="list-group-item"><a routerLink="/dashboard"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Posts</a></li>
+				<li class="list-group-item"><a routerLink="/dashboard/events"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Events</a></li>
+				<li class="list-group-item"><a routerLink="/dashboard/faqs" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Faqs</a></li>
+			</ul>
+		</div>
+
+		<div class="col-md-9">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+</div>

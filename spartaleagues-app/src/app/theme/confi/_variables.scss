@@ -1,0 +1,30 @@
+$assets-root: 'assets/';
+$images-root: $assets-root + 'images/';
+
+//Fonts Boldness
+$font-thin: 100;
+$font-light: 300;
+$font-normal: 400;
+$font-bold: 600;
+$font-bolder: 700;
+$font-ultraBold: 900;
+
+
+$as-color-primary : unquote("#DE1E37") !default;
+$as-color-card : unquote("#1a1e24") !default;
+$as-color-body : unquote("#22282f") !default;
+
+//Fonts Size
+$font-10: 10px;
+$font-12: 12px;
+$font-14: 14px;
+$font-16: 16px;
+$font-18: 18px;
+$font-20: 20px;
+$font-22: 22px;
+$font-24: 24px;
+$font-28: 28px;
+$font-32: 32px;
+$font-36: 36px;
+
+$font-family-primary: 'Nunito Sans', sans-serif;

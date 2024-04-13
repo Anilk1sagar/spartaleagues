@@ -1,0 +1,54 @@
+<div class="as-card shadow1">
+	<h5 class="as-text-color-light-grey text-center"><i class="fas fa-upload"></i> Upload Post</h5><br>
+	<div class="row">
+		<!-- ================== Uploading Posts ===================== -->
+		<!-- <div class="col-md-4"> -->
+			<!-- Image uploading -->
+			<!-- <form>
+				<div class="form-group">
+					<label for="postImage">Post Image</label>
+					<input type="file" class="form-control-file" id="postImage">
+				</div>
+				<input type="submit" class="btn btn-primary btn-sm" value="Upload">
+			</form><br><br>
+		</div> -->
+
+		<div class="col-md-12">
+			<!-- =========== Post Form ============= -->
+			<form (submit)="onPostSubmit()">
+				<div class="form-group">
+					<label for="gameName">Choose Game</label>
+					<select class="form-control" [(ngModel)]="gameName" name="gameName">
+						<option value="CS:GO">CS:GO</option>
+						<option value="Badminton">Badminton</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<input type="text" class="form-control" [(ngModel)]="heading" name="heading" placeholder="Post Heading">
+				</div>
+
+				<div class="form-group">
+					<input type="text" class="form-control" [(ngModel)]="imgLink" name="imgLink" placeholder="Image Link">
+				</div>
+
+				<div class="form-group">
+					<input type="text" class="form-control" [(ngModel)]="videoLink" name="videoLink" placeholder="Video Link">
+				</div>
+
+				<div class="form-group">
+					<!-- <textarea type="text" class="form-control" placeholder="Post Description"></textarea> -->
+					<ckeditor
+						[(ngModel)]="description" 
+						name="description"
+						[config]="{uiColor: '#ebebeb'}"
+						[readonly]="false"
+						debounce="500">
+					</ckeditor>
+					<!-- <div [innerHTML]="description"></div> -->
+				</div>
+				<button type="submit" class="btn btn-primary btn-sm" id="post_btn">Upload Post</button>
+			</form>
+		</div>
+	</div>
+</div><!-- Card Div end -->

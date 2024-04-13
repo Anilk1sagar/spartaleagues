@@ -1,0 +1,32 @@
+<div class="container"><br>
+	<div class="as-card shadow1 text-center">
+		<div class="row" *ngIf="status == 'success'">
+			<div class="col-lg-12">
+				<i class="far fa-check-circle"></i><br><br>
+				<h2>Payment Success!</h2><br>
+				<p>Thank you for participating with spartaleagues - we appreciate your business. You will receive a confirmation email shortly.</p>
+				<p>
+					<b>Payment Id: </b><span>{{ payment_id }}</span><br>
+					<b> Txn Id: </b><span>{{ txnId }}</span>
+				</p>
+				<h5>Check your status here</h5>
+				<a routerLink="/profile" class="btn btn-primary btn-sm">Profile</a>
+			</div>
+		</div>
+
+		<!-- If payment failed! -->
+		<div class="row payment-failed-conatiner" *ngIf="status == 'failure'">
+			<div class="col-lg-12">
+				<i class="fas fa-times"></i><br><br>
+				<h2>Payment Failed!</h2><br>
+				<p>Your transaction has been cancled!. Please try again</p>
+				<p>
+					<b>Payment Id: </b><span>{{ payment_id }}</span><br>
+					<b> Txn Id: </b><span>{{ txnId }}</span>
+				</p>
+				<h5>Go back to checkout</h5>
+				<a routerLink="/checkout" class="btn btn-primary btn-sm">Checkout</a>
+			</div>
+		</div>
+	</div>
+</div>

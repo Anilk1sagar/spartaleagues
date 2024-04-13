@@ -1,0 +1,232 @@
+nav.navbar {
+    color: #fff;
+    background-color: rgb(14, 14, 14);
+    height: 65px;
+    box-shadow: rgba(126, 126, 126, 0.2) 0 2px 6px 0;
+
+    .navbar-brand {
+        color: #ebebeb;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    .drawer-toggler {
+        background-color: transparent;
+        border: 0px;
+        font-size: 20px;
+        color: #ebebeb;
+        outline: none;
+    }
+    .drawer-toggler:hover {
+        cursor: pointer;
+    }
+
+    .nav-item {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    a.nav-link {
+        color: #ebebeb;
+    }
+    a.nav-link:hover, a.active {
+        color: #fff;
+    }
+
+    // User font icon
+    .user-icon {
+        margin-top: 8px;
+        font-size: 24px;
+        color: #777;
+    }
+    .user-img {
+        margin-top: 4px;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 1px solid #1a1e24;
+    }
+
+    // Dropdown Menu
+    .user-menu-dropdown {
+        background-color: #1a1e24;
+        color: #ebebeb;
+        left: auto !important;
+        top: 63px !important;
+        right: 20% !important;
+        font-size: 14px;
+        border: 1px solid rgb(14, 14, 14);
+        border-radius: 1px;
+        transition: all 0.2s;
+        animation: animatezoom 0.2s;
+
+        .singed-as:hover {
+            background: none;
+        }
+
+        a {
+            color: #fff;
+        }
+
+        i {
+            color: #fff;
+            padding-right: 10px;
+        }
+
+        a.active, a:active, a:hover  {
+            color: #fff;
+            text-decoration: none;
+            background-color: #DE1E37;
+        }
+        
+        .dropdown-divider {
+            border-top: 1px solid rgb(14, 14, 14);
+
+        }
+    }
+    
+}
+
+
+// ===================== Navbar Drawer ====================//
+#overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 99999;
+    transition: all .2s;
+}
+
+.nav-drawer {
+    display: block;
+    overflow-y: auto;
+    position: fixed;
+    left: -270px;
+    top: 0;
+    width: 270px;
+    height: 100%;
+    background-color: #22282f;
+    z-index: 99999999999;
+    transition: all 0.2s;
+
+    // Header
+    header {
+        height: 120px;
+        background-color: rgb(14, 14, 14);
+
+        .header-container {
+            width: 200px;
+            margin: 0px auto;
+            padding-top: 35px;
+            
+            //NavDrawer brand
+            a {
+                display: block;
+                font-size: 25px;
+                color: #fff;
+                text-shadow: 1px 1px 4px #555;
+                text-indent: 20px;
+            }
+
+            ul {
+                padding: 0px;
+                margin: 0px;
+                list-style: none;
+                li {
+                    display: inline-block !important;
+                    padding: 5px 8px 5px 8px;
+    
+                    i {
+                        font-size: 45px;
+                    }
+
+                    img {
+                        border-radius: 50%;
+                        margin-top: -23px;
+                        width: 60px;
+                        height: 60px;
+                        border: 1px solid #22282f;
+                    }
+                }
+            }
+        }
+    }
+    // Navbar
+    ul {
+        a {
+            color: #b1b1b1;
+            padding-top: 15px !important;
+            padding-bottom: 15px !important;
+            transition: all 0.2s;
+
+             &:hover {
+                background-color: #1a1e24;
+                color: #fff;
+             }
+        }
+
+        a.active, a:active  {
+            color: #fff;
+            text-decoration: none;
+            background-color: #1a1e24;
+        }
+    }
+
+    //Footer
+    footer {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        bottom: 0px !important;
+        background-color: rgb(14, 14, 14);
+        padding-top: 6px;
+        padding-bottom: 6px;
+
+        ul {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+            
+            li {
+                display: inline-block !important;
+                padding-left: 3px;
+                padding-right: 3px;
+
+                a {
+                    color: #555;
+        
+                    &:hover {
+                        background-color: transparent;
+                        color: #ebebeb;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// Dropdown Animation
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+// Responsive
+@media (min-width: 992px) {
+    .drawer-toggler {
+        display: none;
+    }
+}
+
+// For Mobile
+@media (max-width: 575.98px) {
+    
+}

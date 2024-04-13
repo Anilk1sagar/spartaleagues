@@ -1,0 +1,15 @@
+<div class="as-card shadow1">
+	<h5 class="as-text-color-light-grey text-center"><i class="fas fa-upload"></i> Upload Faq</h5><br>
+	<form (submit)="onFaqSubmit()">
+		<div class="form-group">
+			<label>Question</label>
+			<input type="text" class="form-control" [(ngModel)]="faqQuestion" name="faqQuestion" placeholder="Faq Question">
+		</div>
+
+		<div class="form-group">
+			<label>Answer</label>
+			<textarea type="text" class="form-control" [(ngModel)]="faqAns" name="faqAns" placeholder="Faq Answer"></textarea>
+		</div>
+		<button type="submit" class="btn btn-primary btn-sm" id="faq_btn">Upload Faq</button>
+	</form>
+</div>

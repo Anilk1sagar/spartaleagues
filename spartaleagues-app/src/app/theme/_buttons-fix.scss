@@ -1,0 +1,69 @@
+$color-primary: $as-color-primary;
+
+// button radius
+.btn {
+    border-radius: 2px;
+}
+
+.btn-primary,
+.btn-primary:hover {
+    background-color: $color-primary;
+    border-color: $color-primary;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(222, 30, 55, 0.5);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 0.2rem rgba(222, 30, 55, 0.5);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+    color: #fff;
+    background-color: $color-primary;
+    border-color: $color-primary;
+}
+
+// Button Disabled
+.btn-primary.disabled, .btn-primary:disabled {
+    color: #999;
+    background-color: #ebebeb;
+    border-color: #ebebeb;
+}
+
+
+// Button dark
+
+.btn-dark,
+.btn-dark:hover {
+    background-color: #22282f;
+    border-color: #22282f;
+}
+
+.btn-dark.focus, .btn-dark:focus {
+    box-shadow: 0 0 0 0.2rem rgba(34, 40, 47, 0.5);
+}
+
+.btn-dark:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 0.2rem rgba(34, 40, 47, 0.5);
+}
+
+.btn-dark:not(:disabled):not(.disabled):active {
+    color: #fff;
+    background-color: #22282f;
+    border-color: #22282f;
+}
+
+
+
+
+// For Mobile
+@media (max-width: 575.98px) {
+
+    .btn {
+        padding: 5px 10px !important;
+        font-size: 14px !important;
+    }
+
+}

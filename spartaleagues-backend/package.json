@@ -1,0 +1,65 @@
+{
+	"name": "spartaleagues_backend",
+	"version": "1.0.0",
+	"description": "e-sport company",
+	"main": "index.js",
+	"scripts": {
+		"clean": "rm -rf dist",
+		"build": "npm run clean && mkdir dist && babel src -s -d dist",
+
+		"start": "cross-env NODE_ENV=development&& nodemon bin/dev",
+		"start-prod": "cross-env NODE_ENV=production&& nodemon bin/production",
+
+		"debug:dev": "cross-env NODE_ENV=development && nodemon bin/production",
+
+		"server:dev": "pm2 start ecosystem.config.json --env development",
+		"server:prod": "pm2 start ecosystem.config.json --env production",
+		"stop:server": "pm2 stop ecosystem.config.json",
+		
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://gitlab.com/Anilk1sagar/spartaleagues.git"
+	},
+	"bugs": {
+		"url": "https://gitlab.com/Anilk1sagar/spartaleagues/issues"
+	},
+	"homepage": "https://gitlab.com/Anilk1sagar/spartaleagues#README",
+	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-env": "^1.7.0",
+		"babel-register": "^6.26.0",
+		"config": "^1.30.0",
+		"cross-env": "^5.2.0",
+		"dotenv": "^6.0.0",
+		"dotenv-safe": "^5.0.1",
+		"nodemon": "^1.17.5"
+	},
+	"author": "Anil Kumar",
+	"license": "ISC",
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"body-parser": "^1.18.3",
+		"cors": "^2.8.4",
+		"express": "^4.16.3",
+		"express-boom": "^2.0.0",
+		"express-validator": "^5.2.0",
+		"express-winston": "^2.5.1",
+		"js-sha512": "^0.7.1",
+		"jsonwebtoken": "^8.3.0",
+		"lodash": "^4.17.10",
+		"moment": "^2.22.2",
+		"mongoose": "^5.1.7",
+		"mongoose-paginate": "^5.0.3",
+		"morgan": "^1.9.0",
+		"nodemailer": "^4.4.2",
+		"passport": "^0.4.0",
+		"passport-jwt": "^4.0.0",
+		"request": "^2.87.0",
+		"request-promise": "^4.2.2",
+		"util": "^0.11.0",
+		"winston": "^3.0.0",
+		"winston-daily-rotate-file": "^3.2.3"
+	}
+}

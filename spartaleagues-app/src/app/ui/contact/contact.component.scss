@@ -1,0 +1,209 @@
+.map-container {
+    background-color: #999;
+    width: 100%;
+    height: 400px;
+
+    ngui-map {
+        height: 400px;
+    }
+}
+
+// Contact Container
+.contact-container {
+    background-color: #fff;
+    width: 90%;
+    padding: 0px;
+    margin-top: -100px;
+    margin-bottom: 100px;
+
+    // Form Container Heading
+    .page-header {
+        color: #111;
+        margin-bottom: 15px;
+        padding-left: 8px;
+    }
+
+    .form-container {
+        padding: 25px;
+        z-index: 1000;
+        background-color: #fff;
+    }
+}
+
+//============================ Custom Form ===========================//
+.field {
+    padding: 10px;
+    margin-top: 5px;
+    position: relative;
+}
+
+// Floating label
+.label {
+    font-size: 14px;
+    color: #777;
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    pointer-events:none;
+    transition: all .3s;
+}
+
+// Input Fields
+.input_field {
+    width: 100%;
+    height: 26px;
+    border: 1px solid #999;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+}
+
+// Input Fields focus No outline
+.input_field:focus { 
+    outline:none; 
+}
+
+// Active state Input Fileds Labels
+.input_field:focus ~ .label, .input_field:valid ~ .label  {
+    top: -15px;
+    left: 9px;
+    color:#DE1E37;
+}
+
+// Custom Textarea
+.textarea_field {
+    width: 100%;
+    height: 60px;
+    border: 1px solid #999;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    padding-top: 7px;
+    padding-bottom: 0;
+}
+
+// Textarea focus No outline
+.textarea_field:focus { 
+    outline:none; 
+}
+
+// Textarea Active state input Floating Label
+.textarea_field:focus ~ .label, .textarea_field:valid ~ .label  {
+    top: -15px;
+    left: 9px;
+    color:#DE1E37;
+}
+
+// BOTTOM BARS ================================= */
+.bar { 
+    display: block; 
+    width: 50%;
+}
+
+.bar:before, .bar:after   {
+content: '';
+    height: 2.5px; 
+    width: 0%;
+    bottom: 10px; 
+    position: absolute;
+    background: #DE1E37; 
+    transition: 0.3s ease all; 
+}
+.bar:before {
+    left: 50%;
+}
+.bar:after {
+    right: 50%; 
+}
+
+// Active state Input fileds focus Bars
+.input_field:focus ~ .bar:before, .input_field:focus ~ .bar:after {
+    width: 48.5%;
+}
+
+// Active state Textarea focus Bars
+.textarea_field:focus ~ .bar:before, .textarea_field:focus ~ .bar:after  {
+    width: 48.5%;
+    bottom: 17px;
+}
+
+// Positioning Submit button
+.submit_btn {
+    float: right;
+    margin-top: 5%;
+}
+
+// ===================== Sharing contact detailes =================//
+.contact-detailes-container {
+    background-color: #1a1e24;
+    padding: 25px;
+    color: #fff;
+
+    // Heading
+    .page-header {
+        color: #fff;
+    }
+
+    // Body paragraph
+    p {
+        margin-left: 20px;
+
+        span {
+            position: relative;
+            top: -4px;
+        }
+    }
+
+    // Body Icons
+    i {
+        color: #cac8c8;
+        padding-right: 15px;
+        font-size: 20px;
+    }
+
+    // Social Body Footer Icons
+    .social-footer {
+        margin-top: 25px;
+
+        i {
+            font-size: 28px;
+            padding: 18px;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+
+
+// For Mobile Responsive
+@media (max-width: 1199px) {
+    .contact-detailes-container {
+        // Social Body Footer Icons
+
+        .social-footer {
+            i {
+                padding: 14px;
+            }
+        }
+    }
+}
+
+
+// For Mobile Responsive
+@media (max-width: 575.98px) {
+    .contact-detailes-container {
+        // Social Body Footer Icons
+        .social-footer {
+            margin-top: -25px;
+    
+            i {
+                font-size: 25px;
+                padding: 18px;
+            }
+        }
+    }
+}

@@ -1,0 +1,254 @@
+.main-header {
+    background-image: url('../../../../../assets/images/game-cs.png');
+    background-size: 100% 100%;
+    background-color: #222;
+    color: #fff;
+    height: 450px;
+    width: 100%;
+
+    .header-overlay {
+        position: relative;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+    }
+
+    .header-text{
+        padding-top: 90px;
+
+        .page-header {
+            color: #DE1E37;
+            font-weight: 600;
+        }
+        // Top Header Container
+        .header-top-box {
+            margin-bottom: 70px;
+
+            .game-box {
+                img {
+                    width: 60px;
+                    border: 3px solid #1a1e24;
+                    border-radius: 2px;
+                    float: left;
+                    margin-right: 10px;
+                }
+                h4 {
+                    padding-top: 20px;
+                }
+            }
+        }
+
+    }
+}
+
+
+// ============================ Participate section ===================//
+.tabs-nav {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    border-bottom: 2px solid #22282f;
+
+    li {
+        display: inline-block;
+    }
+
+    a.nav-link {
+        color: #888;
+        border: 1px solid #22282f;
+        border-radius: 3px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-right: 5px;
+        position: relative;
+        bottom: -2px;
+        transition: all 0.3s;
+
+        i {
+            font-size: 16px;
+            padding-right: 3px;
+        }
+    }
+
+    a.active, a:active, a:hover  {
+        border: 1px solid #22282f;
+        color: #fff;
+        text-decoration: none;
+        border-bottom: 2px solid #22282f;
+    }
+}
+
+
+.form-container {
+    padding-bottom: 20px;
+
+    .as-card {
+        border: 2px solid #22282f;
+        border-left: 5px solid #DE1E37;
+        margin-bottom: 20px;
+    }
+
+    .compi-detailes-container {
+        span {
+            display: inline-block;
+            width: 90px;
+            font-weight: 600;
+        }
+    }
+
+    .add-btn {
+        margin-top: 0px;
+    }
+
+    ul.list-group {
+        li.list-group-item {
+            background-color: #22282f;
+            color: #ebebeb;
+            margin-bottom: 10px;
+            padding: 5px 10px;
+
+            .delete-btn {
+                padding: 0px;
+                background-color: transparent;
+                color: #ebebeb;
+                float: right;
+
+                &:hover {
+                    color: #a90d0e;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+// For Mobile
+@media (max-width: 991px) {
+
+    .header-top-box {
+        margin-bottom: 30px !important;
+
+        h4 {
+            font-size: 22px;
+        }
+    }
+
+}
+
+
+
+// For Tablet
+@media (max-width: 768px) {
+
+    .main-header {
+        height: 300px;
+    
+        .header-text{
+            padding-top: 20px;
+        }
+
+        .header-top-box {
+            margin-bottom: 40px !important;
+
+            .game-box {
+                img {
+                    width: 60px;
+                    border: 3px solid #1a1e24;
+                    border-radius: 2px;
+                }
+
+                h4 {
+                    margin-top: 20px;
+                }
+            }
+
+            .description-box {
+                display: none;
+            }
+        }
+
+        .header-bottom-box {
+            font-size: 14px !important;
+
+            i {
+                padding-right: 2px !important;
+            }
+
+            span {
+                margin-left: 0px;
+            }
+        }
+    
+    }
+}
+
+
+// For Mobile
+@media (max-width: 575.98px) {
+
+    .main-header {
+        height: 200px;
+    
+        .header-text{
+            padding-top: 5px;
+
+            .header-top-box {
+                margin-bottom: 25px !important;
+
+                .game-box {
+                    img {
+                        width: 50px;
+                    }
+    
+                    h4 {
+                        margin-top: 15px;
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            h6 {
+                margin: 0px;
+            }
+
+            .about-section {
+                display: none;
+            }
+        }
+    }
+
+    .container {
+        //padding: 5px !important;
+
+        a.nav-link {
+            padding-left: 5px;
+            padding-right: 5px;
+            font-size: 14px;
+        }
+
+        .form-container {
+            padding: 0px;
+
+            .add-btn {
+                margin-top: 8px;
+                float: right;
+            }
+        }
+    }
+
+    span {
+        display: inline !important;
+    }
+}

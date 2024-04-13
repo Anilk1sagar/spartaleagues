@@ -1,0 +1,45 @@
+<!-- Main Header Section -->
+<div class="slider-container">
+	<app-slider></app-slider>
+</div><br>
+
+
+<!-- Post / Articles / videos Section -->
+<div class="container">
+	<hr class="hr-text" data-content="Posts"><br>
+	<div class="row">
+		<div class="col-lg-8 post-container">
+			<ul class="tab-nav">
+				<li class="nav-item">
+					<a class="nav-link" routerLink='/' routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Counter Strike</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" routerLink='/badminton' routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Badminton</a>
+				</li>
+			</ul><br>
+			<router-outlet></router-outlet>
+		</div>
+
+		<!-- Sidebar for socialand more details Section -->
+		<div class="col-lg-4 social-sidebar">
+			<div class="as-card shadow1">
+				<h6 class="page-header">Upcoming Events</h6><hr>
+				<ul class="list-group" *ngIf="_competetions">
+					<!-- <li class="list-group-item">Coming Soon!</li> -->
+					<li class="list-group-item as-mg-bottom-5" *ngFor="let compis of _competetions">{{compis.date}} : <a routerLink="/participate">{{compis.name}}</a></li>
+				</ul>
+			</div><br>
+
+			<div class="as-card shadow1">
+				<h6 class="page-header">Follow Us!</h6><hr>
+				<div class="fb-page" data-href="https://www.facebook.com/SpartaLeagues" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/SpartaLeagues" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/SpartaLeagues">SpartaLeagues</a></blockquote></div><br>
+				<!-- Youtube Button -->
+				<div class="g-ytsubscribe" data-channelid="UCCTAjknbYCRI2z1RnjZ7zNg" data-layout="full" data-theme="dark" data-count="default" style="margin-top: 15px"></div>
+			</div><br>
+
+			<!-- <div class="as-card shadow1">
+				<div class="g-ytsubscribe" data-channelid="UCCTAjknbYCRI2z1RnjZ7zNg" data-layout="full" data-theme="dark" data-count="default"></div>
+			</div> -->
+		</div>
+	</div>
+</div><br>

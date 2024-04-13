@@ -1,0 +1,59 @@
+<div class="container"><br>
+	<div class="as-card shadow1" *ngIf="post">
+		<div class="row">
+			<div class="col-md-8">
+				<span class="badge badge-primary">New</span>
+				<small>{{ post.gameName }} • <span class="post-date">{{post.updated_date}}</span></small><br><br>
+				<h3 class="post-heading">{{ postHeading }}</h3><br>
+				<!-- Image -->
+				<img *ngIf="post.imgLink" src="{{ post.imgLink }}" alt="Thumbnail" class="post-img">
+				<!-- Iframe -->
+				<iframe *ngIf="post.videoLink" [src]="sanitizer.bypassSecurityTrustResourceUrl(post.videoLink)" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+				<br><br>
+				<div id="post-description">
+					<p [innerHTML]="post.description"></p>
+				</div>
+			</div>
+	
+			<!-- Sidebar -->
+			<div class="col-md-4">
+				<div class="as-card most-read">
+					<h5 class="page-header">Related Most Read</h5>
+	
+					<!-- <div class="as-card-sidebar shadow1">
+						<div class="row">
+							<div class="col-md-5">
+								<img src="./assets/images/thumbnail.jpg" alt="Thumbnail">
+							</div>
+							<div class="col-md-7">
+								<a routerLink="/post"><h6>Post heading goes here</h6></a>
+							</div>
+						</div>
+					</div><br>
+	
+					<div class="as-card-sidebar shadow1">
+						<div class="row">
+							<div class="col-md-5">
+								<img src="./assets/images/thumbnail.jpg" alt="Thumbnail">
+							</div>
+							<div class="col-md-7">
+								<a routerLink="/post"><h6>Post heading goes here</h6></a>
+							</div>
+						</div>
+					</div><br>
+	
+					<div class="as-card-sidebar shadow1">
+						<div class="row">
+							<div class="col-md-5">
+								<img src="./assets/images/thumbnail.jpg" alt="Thumbnail">
+							</div>
+							<div class="col-md-7">
+								<a routerLink="/post"><h6>Post heading goes here</h6></a>
+							</div>
+						</div>
+					</div><br> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

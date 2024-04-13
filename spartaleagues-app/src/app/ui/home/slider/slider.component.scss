@@ -1,0 +1,145 @@
+// .main-header {
+//     background-image: url('../../../../assets/images/background1.jpg');
+//     background-size: 100% 100%;
+//     background-color: #222;
+//     color: #fff;
+//     height: 400px;
+//     width: 100%;
+
+//     .header-overlay {
+//         position: relative;
+//         left: 0px;
+//         top: 0px;
+//         width: 100%;
+//         height: 100%;
+//         background-color: rgba($color: #000000, $alpha: 0.5);
+//     }
+
+//     .header-text{
+//         padding-top: 80px;
+//     }
+// }
+
+ngu-carousel {
+    height: 100%;
+}
+
+.main-header {
+    background-color: #222;
+    color: #fff;
+    height: 400px;
+    width: 100%;
+
+    .leftRs {
+        font-size: 25px;
+        color: white;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        width: 50px;
+        height: 50px;
+        left: 0;
+        background-color: transparent;
+        border: 0px;
+        outline: none;
+        cursor: pointer;
+    }
+    
+    .rightRs {
+        font-size: 25px;
+        color: white;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 50px;
+        height: 50px;
+        background-color: transparent;
+        border: 0px;
+        outline: none;
+        cursor: pointer;
+    }
+
+}
+
+.image-container {
+    position: relative;
+    img {
+        width: 100%;
+        height: 400px;
+    }
+    .header-overlay {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+    }
+    
+    .header-text{
+        padding-top: 80px;
+    }
+}
+
+
+
+// For Tablet
+@media (max-width: 768px) {
+    .main-header {
+        height: 300px;
+    }
+
+    .image-container {
+        img {
+            height: 300px;
+        }
+
+        .header-text{
+            padding-top: 50px;
+        }
+    }
+}
+
+
+// For Mobile
+@media (max-width: 575.98px) {
+    .main-header {
+        height: 200px;
+
+        .leftRs {
+            color: rgb(161, 161, 161);
+        }
+
+        .rightRs {
+            color: rgb(161, 161, 161);
+        }
+    }
+
+    .image-container {
+        img {
+            height: 200px;
+        }
+
+        font-size: 15px;
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 13px;
+        }
+
+        .header-text{
+            padding-top: 10px;
+        }
+
+        .btn {
+            font-size: 13px;
+            padding: 6px !important;
+        }
+    }
+}

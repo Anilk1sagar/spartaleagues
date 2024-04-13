@@ -1,0 +1,63 @@
+<!-- <div class="main-header">
+	<div class="header-overlay">
+		<div class="container">
+			<div class="header-text" *ngIf="_competetion">
+				<div class="row">
+					<div class="col-md-6">
+						<h2>{{ _competetion.name }}</h2>
+						<p>{{ _competetion.description }}</p>
+						<a routerLink="/participate" class="btn btn-primary">Participate</a> <a routerLink="/login" class="btn btn-dark" *ngIf="!authService.loggedIn()">Sign in/Register</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> -->
+
+<div class="main-header">
+    <ngu-carousel
+    [inputs]="carouselOne"
+    (carouselLoad)="myfunc($event)">
+
+        <ngu-item NguCarouselItem>
+            <div class="image-container">
+                <img src="../../../../assets/images/header-back1.jpg" width="100%">
+                <div class="header-overlay">
+                    <div class="container">
+                        <div class="header-text">
+                            <div class="row" *ngIf="_competetion1" [@doAnimate]="{ value: bounceIn, params: { timing: myTiming || 1, delay: myDelay || 0 } }">
+                                <div class="col-md-6">
+                                    <h2>{{_competetion1.name}}</h2>
+                                    <p>{{_competetion1.description}}</p>
+                                    <a routerLink="/participate" class="btn btn-primary">Participate</a> <a routerLink="/login" class="btn btn-dark" *ngIf="!authService.loggedIn()">Sign in/Register</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ngu-item>
+
+        <ngu-item NguCarouselItem>
+            <div class="image-container">
+                <img src="../../../../assets/images/header-back2.png" width="100%">
+                <div class="header-overlay">
+                    <div class="container">
+                        <div class="header-text">
+                            <div class="row" *ngIf="_competetion2" [@doAnimate]="{ value: bounceIn, params: { timing: myTiming || 1, delay: myDelay || 2 } }">
+                                <div class="col-md-6">
+                                    <h2>{{_competetion2.name}}</h2>
+                                    <p>{{_competetion2.description}}</p>
+                                    <a routerLink="/participate" class="btn btn-primary">Participate</a> <a routerLink="/login" class="btn btn-dark" *ngIf="!authService.loggedIn()">Sign in/Register</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ngu-item>
+
+        <button NguCarouselPrev class='leftRs'><i class="fas fa-angle-left"></i></button>
+        <button NguCarouselNext class='rightRs'><i class="fas fa-angle-right"></i></button>
+	</ngu-carousel>
+</div>

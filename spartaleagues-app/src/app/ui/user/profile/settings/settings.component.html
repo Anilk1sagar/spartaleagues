@@ -1,0 +1,71 @@
+<div class="form-container">
+	<form (submit)="onUserUpdateSubmit()">
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="name">Name</label>
+				<input type="text" class="form-control" [(ngModel)]="name" name="name" placeholder="Name">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="username">Username</label>
+				<input type="text" class="form-control" [(ngModel)]="username" name="username" placeholder="Enter Username For Update">
+			</div>
+		</div>
+		
+
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="city">City</label>
+				<input type="text" class="form-control" [(ngModel)]="city" name="city" placeholder="City">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="phone">Phone</label>
+				<input type="text" class="form-control" [(ngModel)]="phone" name="phone" placeholder="Phone">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" class="form-control" [(ngModel)]="email" name="email" placeholder="Enter Email For Update">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="selectedGame">Choose Your Game</label>
+			<select class="form-control" [(ngModel)]="selectedGame" name="selectedGame" (change)="selectGame()">
+				<option value="None">None</option>
+				<option value="CS:GO">CS:GO</option>
+				<option value="Badminton">Badminton</option>
+			</select>
+		</div>
+	
+		<div class="form-group" *ngIf="GameRanks">
+			<label for="gameRank">Choose Your Game Rank</label>
+			<select class="form-control" [(ngModel)]="gameRank" name="gameRank">
+				<option *ngFor="let rank of GameRanks" value="{{ rank.value }}">{{ rank.value }}</option>
+			</select>
+		</div>
+	
+		<div class="form-group">
+			<label for="steamProfile">Steam Profile URl</label>
+			<input type="text" class="form-control" [(ngModel)]="steamProfile" name="steamProfile" placeholder="Steam Profile URl for update">
+		</div>
+
+		<div class="form-group">
+			<label for="imgLink">Image URl</label>
+			<input type="text" class="form-control" [(ngModel)]="imgLink" name="imgLink" placeholder="Image URl">
+		</div>
+
+		<div class="form-group">
+			<label for="imgLink">Cover Image URl</label>
+			<input type="text" class="form-control" [(ngModel)]="coverImgLink" name="coverImgLink" placeholder="Cover Image URl">
+		</div>
+	
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Password">
+		</div>
+		
+		<button type="submit" class="btn btn-primary" id="update_btn">Update</button>
+	</form>
+</div>

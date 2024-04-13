@@ -1,0 +1,3 @@
+sudo cp spartaleagues/default /etc/nginx/sites-available
+
+sudo cp spartaleagues/google1c18fae2530ae6b6.html /var/www

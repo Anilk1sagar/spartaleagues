@@ -1,0 +1,16 @@
+.container {
+    color: #444;
+}
+
+.as-card {
+    border-radius: 1px;
+    border-left: 5px solid #DE1E37;
+}
+
+
+// For Tablet
+@media (max-width: 768px) {
+    .as-card {
+        margin-bottom: 10px;
+    }
+}

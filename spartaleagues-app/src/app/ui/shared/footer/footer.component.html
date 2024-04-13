@@ -1,0 +1,78 @@
+<div class="footer mt-5">
+	<div class="container">
+		<div class="row">
+			<!-- Footer Logo -->
+			<div class="col-md-5">
+				<a routerLink="/" class="footer-logo">SpartaLeagues</a>
+			</div>
+
+			<!-- Footer Links -->
+			<div class="col-md-7 footerLinks">
+				<div class="row">
+					<div class="col-md-4">
+						<h6>Games</h6>
+						<ul *ngIf="competetion">
+							<li *ngFor="let compi of competetion"><a routerLink="/participate">{{compi.gameName}}</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<h6>Events</h6>
+						<ul *ngIf="competetion">
+							<li *ngFor="let compi of competetion"><a routerLink="/participate">{{compi.name}}</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<h6>Contact</h6>
+						<p>S T Bed Layout, Koramangala, <br />Bengaluru, Karnataka <br> Pin: 560047</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<span>Copyright © 2018 spartaleagues.com  |  All Rights Reserved</span>
+					<a routerLink="/privacy">Privacy & Policy</a> 
+					<a routerLink="/terms">Terms & Conditions</a>
+				</div>
+				<div class="col-lg-4">
+					<ul class="icon-container">
+						<li class="nav-item">
+							<a class="nav-link" href="{{facebook}}" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{twitter}}" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{youtube}}" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{insta}}" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- <div class="footer">
+	<div class="container">
+		<div class="row"> -->
+			<!-- Footer Logo -->
+			<!-- <div class="col-lg-5">
+				<a routerLink="/home" class="footer-logo">SpartaLeagues</a>
+			</div>
+			<div class="col-lg-7">
+				<div class="footer-copyright">
+					<span>Copyright © 2018 spartaleagues.com  |  All Rights Reserved</span>
+					<a routerLink="privacy">Privacy & Policy</a> 
+					<a routerLink="terms">Terms & Conditions</a>
+				</div>
+			</div>
+		</div><br>
+	</div>
+</div> -->

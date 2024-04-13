@@ -1,0 +1,85 @@
+<div class="container">
+	<div class="login-container">
+		<div class="row shadow2">
+			<div class="col-lg-6 col-sm-6 as-card-primary">
+				<a routerLink="/" class="brand-logo"><h3>SpartaLeagues</h3></a><br>
+				<div class="row">
+					<div class="col">
+						<div class="welcome-section">
+							<h1>Welcome.</h1>
+							<p>Be part of our awesome community and have fun with us</p>
+						</div>
+					</div>
+				</div>
+				<div class="social-container">
+					<h6>Connect with us!</h6>
+					<ul class="icon-container">
+						<li class="nav-item">
+							<a class="nav-link" href="{{facebook}}" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{twitter}}" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{youtube}}" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{insta}}" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+						</li>
+					</ul>
+				</div>
+				<div class="policy-container text-center">
+					<a routerLink="/privacy">Privacy & Policy</a> 
+					<a routerLink="/terms">Terms & Conditions</a>
+				</div>
+			</div>
+
+			<div class="col-lg-6 col-sm-6 as-card">
+				<header>
+					<h3 class="page-header text-center">Register</h3>
+					<a routerLink="/" class="small-logo"><h3>SpartaLeagues</h3></a>
+				</header>
+
+				<form (submit)="onRegisterSubmit()" class="form-container as-form">
+
+					<h5 class="small-register-heading">Register</h5>
+
+					<div class="field">
+						<input type="name" name="name" class="input_field" [(ngModel)]="name" required>
+						<span class="bar"></span>
+						<span class="label">Name</span>
+					</div><br>
+
+					<div class="field">
+						<input type="text" name="username" class="input_field" [(ngModel)]="username" required>
+						<span class="bar"></span>
+						<span class="label">Username</span>
+					</div><br>
+
+
+					<div class="field">
+						<input type="email" name="email" class="input_field" [(ngModel)]="email" required>
+						<span class="bar"></span>
+						<span class="label">Email</span>
+					</div><br>
+
+					<div class="field">
+						<input type="password" name="password" class="input_field" [(ngModel)]="password" required>
+						<span class="bar"></span>
+						<span class="label">Password</span>
+					</div><br>
+
+					<div class="row">
+						<div class="col-md-12">
+							<button type="submit" class="btn btn-primary" id="register_btn">Register</button>
+						</div>
+					</div>
+				</form>
+
+				<hr class="hr-text" data-content="or">
+
+				<h6 class="text-center register-text">Already user? <a class="register-link" routerLink='/login' routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Sign in</a></h6>
+			</div>
+		</div>
+	</div>
+</div>

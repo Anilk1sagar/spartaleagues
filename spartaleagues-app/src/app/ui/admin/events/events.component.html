@@ -1,0 +1,40 @@
+<div class="as-card shadow1">
+    <h5 class="as-text-color-light-grey text-center"><i class="fas fa-upload"></i> Upload Events</h5><br>
+    <form (submit)="onCompetetionSubmit()">
+		<div class="form-group">
+			<label for="competetionName">Event Name</label>
+			<input type="text" class="form-control" [(ngModel)]="name" name="name" placeholder="Event Name">
+		</div>
+			
+		<div class="form-group">
+			<label for="gameName">Choose Event Game</label>
+			<select class="form-control" [(ngModel)]="gameName" name="gameName">
+				<option value="CS:GO">CS:GO</option>
+				<option value="Badminton">Badminton</option>
+			</select>
+		</div>
+
+		<div class="form-group">
+			<label for="competetionLocation">Event Location</label>
+			<input type="text" class="form-control" [(ngModel)]="location" name="location" placeholder="Location">
+		</div>
+
+		<div class="form-group">
+			<label>Entry Fees</label>
+			<input type="text" class="form-control" [(ngModel)]="singlePlayerMode" name="singlePlayerMode" placeholder="Single Player Mode"><br>
+			<input type="text" class="form-control" [(ngModel)]="multiPlayerMode" name="multiPlayerMode" placeholder="Multi Player Mode (Team)">
+		</div>
+
+		<div class="form-group">
+			<label for="date">Event Date : <small class="as-font-12">Eg-(03-Mar-2018)</small></label>
+			<input type="text" class="form-control" [(ngModel)]="date" name="date" placeholder="Event Date">
+		</div>
+
+	<div class="form-group">
+		<label for="description">Event Description</label>
+		<textarea type="text" class="form-control" [(ngModel)]="description" name="description" placeholder="Event Description"></textarea>
+	</div>
+
+    	<button type="submit" class="btn btn-primary btn-sm" id="compi_btn">Upload Event</button>
+    </form>
+</div>

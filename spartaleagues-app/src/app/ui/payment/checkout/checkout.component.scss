@@ -1,0 +1,89 @@
+.as-card {
+    padding: 30px;
+}
+
+.table-bordered td {
+    border: 2px solid #22282f;
+}
+
+.user-detailes {
+    color: #ebebeb;
+
+    ul.emails-list {
+        margin: 0px;
+        padding: 0px;
+        list-style-type: none;
+    }
+
+    a.edit-link {
+        color: #fff;
+        text-decoration: underline;
+    }
+}
+
+ul.payment-options {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-align: center;
+
+    li {
+        display: inline-block;
+        font-size: 12px;
+        text-align: center;
+        width: 70px;
+        //color: #DE1E37;
+        i {
+            font-size: 30px;
+        }
+    }
+}
+
+.order-summery-card {
+    background-color: #22282f;
+    color: #ebebeb;
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+
+    hr {
+        background-color: #1a1e24;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+
+        li {
+            color: #ebebeb;
+
+            span {
+                float: right;
+            }
+        }
+    }
+
+    .pay-btn {
+        width: 100%;
+    }
+}
+
+
+
+// For Mobile
+@media (max-width: 575.98px) {
+    .as-card {
+        padding: 15px;
+    }
+
+    .user-detailes {
+        .row {
+            margin-bottom: 10px;
+        }
+    }
+
+    .order-summery-card {
+        width: 100%;
+    }
+}
